@@ -3,7 +3,9 @@
 # Part of Lab 09 — feature/read-dynamo branch
 
 import boto3
+
 from boto3.dynamodb.conditions import Key
+from boto3.dynamodb.conditions import Attr
 
 # -------------------------------------------------------
 # Configuration — update REGION if your table is elsewhere
