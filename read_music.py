@@ -22,8 +22,8 @@ def get_table():
 
 def print_music(music):
     title = music.get("Title", "Unknown Title")
-    artist = music.get("Year", "Unknown Year")
-    seconds = music.get("Ratings", "No ratings")
+    artist = music.get("Artist", "Unknown Year")
+    seconds = music.get("Seconds", "No ratings")
     
     print(f"  Title             : {title}")
     print(f"  Artist           : {artist}")
