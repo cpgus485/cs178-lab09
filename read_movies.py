@@ -53,6 +53,25 @@ def print_all_movies():
 def main():
     print("===== Reading from DynamoDB =====\n")
     print_all_movies()
+    mov_title = input("Enter a movie title: ")
+    get_movie_by_title(mov_title)
+
+def get_movie_by_title(title):
+    table = get_table()
+
+    response = table.scan(
+        FilterExpression=Attr("Title").eq(title)
+    )
+
+    items = response.get("Items", [])
+
+    if not items:
+        print("Not Found")
+        return
+    
+    for movie in items:
+        print_movie(movie)
+
 
 
 if __name__ == "__main__":
